@@ -45,7 +45,7 @@
             flex-grow: 1;
         }
         .selection-box {
-            background-color: rgb(110, 100, 82);
+            background-color: #dbb17f;
             padding: 20px;
             border-radius: 15px;
             text-align: center;
@@ -91,6 +91,8 @@
             border: none;
             cursor: pointer;
             border-radius: 15px;
+            text-decoration: none;
+            display: inline-block;
         }
         .purchase-button:hover {
             background-color: #d1d1d1;
@@ -128,16 +130,16 @@
             position: relative;
         }
         .price {
-        font-size: 24px;
-        font-weight: bold;
-        color: rgb(255, 0, 0);
-        margin: 20px 0;
-    }
-    .note {
-        font-size: 16px;
-        color: rgb(255, 247, 0);
-        margin-top: 20px;
-    }
+            font-size: 24px;
+            font-weight: bold;
+            color: rgb(255, 255, 255);
+            margin: 20px 0;
+        }
+        .note {
+            font-size: 16px;
+            color: rgb(255, 255, 255);
+            margin-top: 20px;
+        }
     </style>
     <script src="https://apis.google.com/js/api.js"></script>
     <script>
@@ -214,9 +216,11 @@
                 if (stock > 0) {
                     purchaseButton.disabled = false;
                     purchaseButton.textContent = "立即購買";
+                    purchaseButton.href = "https://liff.line.me/1645278921-kWRPP32q/?accountId=733wvmpd";
                 } else {
                     purchaseButton.disabled = true;
                     purchaseButton.textContent = "目前缺貨";
+                    purchaseButton.href = "#";
                 }
             }
         }
@@ -384,8 +388,8 @@
                     </div>
                     <div id="stockDisplay" class="stock-display">剩餘數量: </div>
                     <div class="price">價格: 1000元/件</div>
-                    <button id="purchaseButton" class="purchase-button" disabled>目前缺貨</button>
-                    <div class="note">註：此剩餘數量可能不完全準確，請以官方人員提供的準確數據為準。</div>
+                    <a id="purchaseButton" class="purchase-button" disabled>目前缺貨</a>
+                    <div class="note">註：請以官方賴的工作人員提供的準確數據為準。</div>
                 </div>
             </div>
         </div>
